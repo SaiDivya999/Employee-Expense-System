@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+        <div class="info-form">
+        <div class= "first-container">
+            <div class="info-container">
+                <div>
+                    <h1>Expense Page</h1>
+                    <p>Hey you, add your expense here!!</p>
+                </div>
+            </div>
+        </div>
+        <div class="second-container">
+            <h2>Expense Form</h2>
+               
+            <form [formGroup]="saveexpenseform" #saveexpense (ngSubmit)= "saveExpense(saveExpense)">
+
+
+            <div class="form-group">
+            <input formControlName= "expenseType" type="text" placeholder="Expense Type" 
+            data-toggle="tooltip" data-placement="right" title="Enter Expense Type">
+            <div class="error-message" *ngIf = "(ExpenseType.touched) && (ExpenseType.invalid)" >
+                <span *ngIf="ExpenseType.errors.required">Expense Type is Required</span>
+                  <span *ngIf = "ExpenseType.errors.minlength"> 
+                      MinLength Error 
+                  </span>                   
+              </div>
+            </div>
+
+        <div class="form-group">
+            <input formControlName= "expenseDescription" type="text" placeholder="Expense Description"
+        data-toggle="tooltip" data-placement="right" title="Enter Expense Description">
+        <div class="error-message" *ngIf = "(ExpenseDescription.touched) && (ExpenseDescription.invalid)" >
+            <span *ngIf="ExpenseDescription.errors.required">Expense Description is Required</span>
+              <span *ngIf = "ExpenseDescription.errors.minlength"> 
+                  MinLength Error 
+              </span>                   
+          </div>
+        </div>
+        <button class="submit" type="submit">ADD</button>
+        </form>
+       
+        <button class="submit" onclick = "location.href = 'view-expense' " type = "submit" id="button1">View All</button> 
+        </div> 
+    </div>
+   
+</body>
+</html>

@@ -1,0 +1,28 @@
+<br>
+<div>
+    <h1 style="text-align: center">Expense List</h1><br>          
+</div>
+    <div class ="container">
+        <button a [routerLink]="['/view-expense']"  class= "submit" type="button" >Delete all Expense</button>
+        <table  class="table  table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions"
+        [dtTrigger]="dtTrigger" >
+        
+        <thead class="thead-dark">
+                <tr>
+                    <th>Expense Code</th>
+                    <th>Expense Type</th>
+                    <th>Expense Description</th>  
+                    <th>Action</th>             
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor="let e of expenses">
+                    <td>{{e.expenseCode}}</td>
+                    <td>{{e.expenseType}}</td>
+                    <td>{{e.expenseDescription}}</td> 
+                    <td><button (click)="deleteExpense(e.expenseCode)" class="btn"><i class="fa fa-trash"></i>Delete</button> </td>                              
+                  </tr> 
+            </tbody>
+        </table>
+    </div>
+ 

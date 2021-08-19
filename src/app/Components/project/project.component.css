@@ -1,0 +1,129 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background: #f2f2f2;
+}
+.info-form{
+width: 1000px;
+height: 500px;
+display: flex;
+justify-content: space-between;
+background: rgb(73, 193, 202);
+margin: 50px 0;
+box-shadow: 0 19px 38px rgba(0,0,0,0.3), 0 15px 12px rgba(129, 129, 129, 0.22)
+}
+
+.info-form > *{
+    width: 50%;
+}
+
+.info-form .first-container{
+    background: linear-gradient(45deg, rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(src\assets\images\project.jpg) center center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info-form .first-container .info-container div{
+    margin: 24px 0;
+}
+.info-form .first-container .info-container div h1{
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.2;
+    padding-bottom: 10px;
+}
+
+
+.info-form .first-container .info-container div p{
+    color: #00ad5f;
+    font-size: 16px;
+    line-height: 1.6;
+}
+.info-form .second-container{
+    padding:30px;
+}
+
+.info-form .second-container form{
+    display: flex;
+    flex-direction: column;
+}
+
+.info-form .second-container h2{
+    font-size: 30px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.info-form .second-container form .form-group{
+    position: center;
+    width: 100%;
+    height: 50%;
+    padding: 10px 30px;
+    
+}
+
+.info-form .second-container form .form-group input{
+  min-height: 50px;
+  border: 1px solid #e6e6e6;
+  padding: 0 10px;
+  width: 100%;
+  font-size: 15px;
+  color: #333;
+  text-transform: uppercase;
+  
+}
+
+button{
+    display: block;
+    margin: 0 auto;
+    width: 260px;
+    height: 36px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+.submit{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: sans-serif;
+    background: -webkit-linear-gradient(left,#7579ff,#b224ef);
+}
+.submit:hover{
+    background: -webkit-linear-gradient(left,#b224ef,#7579ff);
+}
+
+#button1{
+    display: block;
+    margin: 60px auto;
+    width: 100px;
+    height: 36px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    
+}
+.viewAll{
+    font-weight: 600;
+    font-family: sans-serif;
+    background: -webkit-linear-gradient(left,#7579ff,#b224ef);
+}
+
+.viewAll:hover{
+    background: -webkit-linear-gradient(left,#b224ef,#7579ff);
+}

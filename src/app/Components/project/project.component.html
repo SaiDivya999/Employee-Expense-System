@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <div class="info-form" *ngIf="userName !='admin'">  
+        <div class= "first-container">
+            <div class="info-container">
+                <div>
+                    <h1>Project Page</h1>
+                    <p>Hey, add your project details here!!</p>
+                </div>
+            </div>
+        </div>
+        <div class="second-container">
+            <h2>Project Form</h2>
+               
+            <form [formGroup]="saveprojectform" #saveproject (ngSubmit)= "saveProject(saveProject)">
+                <div class="form-group">
+            <input formControlName= "projectDescription" type="text" placeholder="Project Description" 
+            data-toggle="tooltip" data-placement="right" title="Enter Project Description">
+            <div class="error-message" *ngIf = "(ProjectDescription.touched) && (ProjectDescription.invalid)" >
+                <span *ngIf="ProjectDescription.errors.required">Project is Required</span>
+                  <span *ngIf = "ProjectDescription.errors.minlength"> 
+                      MinLength Error 
+                  </span>                   
+              </div>
+        
+        </div>
+        <div class="form-group">
+            <label for = "StartDate">Start Date</label>
+            <input formControlName= "startDate" type="date" placeholder="dd-mm-yyyy">
+         
+        </div>
+        <div class="form-group">
+            <label for = "EndDate">End Date</label>
+            <input formControlName= "endDate" type="date" placeholder="dd-mm-yyyy">
+         
+        </div>
+        <button class="submit" type="submit">ADD</button>
+        </form>
+        <button class="submit" onclick = "location.href = 'viewproject' " type = "submit" id="button1">View All</button> 
+       
+        </div> 
+    </div>
+   <div *ngIf="userName=='admin'">
+       
+       <a  [routerLink]="viewproject"></a>
+
+   </div>
+</body>
+</html>

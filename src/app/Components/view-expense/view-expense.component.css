@@ -1,0 +1,35 @@
+button{
+    display: block;
+    margin: 0 0px;
+    width: 150px;
+    height: 36px;
+    border-radius: 0px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+}
+.submit{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-family: sans-serif;
+    background: -webkit-linear-gradient(left,#7579ff,#b224ef);
+}
+.submit:hover{
+    background: -webkit-linear-gradient(left,#b224ef,#7579ff);
+}
+
+
+.btn {
+    text-align: center;
+    background-color: rgb(13, 173, 13);
+    border: none; 
+    color: white; 
+    width: 100px;
+    font-size: 16px;
+    cursor: pointer; 
+  }
+
+.btn:hover {
+    background-color: rgb(182, 24, 24);
+  }

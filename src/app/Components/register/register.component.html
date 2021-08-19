@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href=''>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div class="info-form">
+        <div class= "first-container">
+            <div class="info-container">
+                <div>
+                    <h1>Employee Page</h1>
+                    <p>Hey you, add your details!!</p>
+                </div>
+            </div>
+        </div>
+        <div class="second-container">
+            <h2>Employee Form</h2>
+            <form [formGroup]="saveempform" #saveemp (ngSubmit)= "saveEmployee(saveemp)">
+                <div class="form-group">
+            <input formControlName= "empName" type="text" placeholder="Employee Name" data-toggle="tooltip" data-placement="right" title="Enter Employee Name">
+            <div class="error-message" *ngIf = "(EmpName.touched) && (EmpName.invalid)" >
+                  <span *ngIf="EmpName.errors.required">Employee Name is Required</span>
+                    <span *ngIf = "EmpName.errors.minlength"> 
+                        MinLength Error 
+                    </span>                   
+                </div>
+            </div>
+
+        <div class="form-group">
+            <input formControlName= "empPAN" type="text" placeholder="Employee Pan" data-toggle="tooltip" data-placement="right" title="Enter Employee PAN Card Number">
+            <div class="error-message" *ngIf = "(EmpPAN.touched) && (EmpPAN.invalid)" 
+                style="margin-top: 5px;">
+                  <span *ngIf="EmpPAN.errors.required">PAN is Required</span>
+                    <span *ngIf = "EmpPAN.errors.pattern"> 
+                        PAN should be in the format eg: DKJHS7532K 
+                    </span>                   
+                </div>
+        </div>
+
+        <div class="form-group">
+            <input formControlName = "empDesignation" type="text" placeholder="Designation" data-toggle="tooltip" data-placement="right" title="Enter Employee Designation">
+            <div class="error-message" *ngIf = "(EmpDesignation.touched) && (EmpDesignation.invalid)" >
+                <span *ngIf="EmpDesignation.errors.required">Employee Designation is Required</span>
+                  <span *ngIf = "EmpDesignation.errors.minlength"> 
+                      MinLength Error 
+                  </span>                   
+              </div>
+        </div>
+
+        <div class="form-group">
+            <input formControlName = "empDomain" type="text" placeholder="Domain" data-toggle="tooltip" data-placement="right" title="Enter Employee Domain">
+            <div class="error-message" *ngIf = "(EmpDomain.touched) && (EmpDomain.invalid)" >
+                <span *ngIf="EmpDomain.errors.required">Domain is Required</span>
+                  <span *ngIf = "EmpDomain.errors.minlength"> 
+                      MinLength Error 
+                  </span>                   
+              </div>
+        </div>
+
+        <div class="form-group">
+            <label for ="DOJ">Date of Joining</label>
+            <input formControlName = "empDOJ" type="date" placeholder="Date of joining" data-toggle="tooltip" data-placement="right" title="Enter Employee DOJ">
+           
+        </div>
+
+        <div class="form-group">
+            <label for ="DOB">Date of birth</label>
+            <input formControlName = "empDOB" type="date" placeholder="Date of birth" data-toggle="tooltip" data-placement="right" title="Enter Employee DOB">
+            
+        </div>
+
+        <div class="form-group">
+            <input formControlName = "empSalary" type="text" placeholder="Salary" data-toggle="tooltip" data-placement="right" title="Enter Employee Salary">
+            <div class="error-message" *ngIf = "(EmpSalary.touched) && (EmpSalary.invalid)" >
+                <span *ngIf="EmpSalary.errors.required">Salary is Required</span>
+                  <span *ngIf = "EmpSalary.errors.minlength"> 
+                      MinLength Error 
+                  </span>                   
+              </div>
+        </div>
+
+        <div class="form-group">
+            <input formControlName = "empEmailId" type="email" placeholder="Email id" data-toggle="tooltip" data-placement="right" title="Enter Employee EmailId" >
+            <div class="error-message" *ngIf = "(EmpEmailId.touched) && (EmpEmailId.invalid)" 
+            style="margin-top: 5px;">
+              <span *ngIf="EmpEmailId.errors.required">EmailId is Required</span>
+                <span *ngIf = "EmpEmailId.errors.pattern"> 
+                    enter email id in the format eg:abc@gmail.com 
+                </span>                   
+            </div>
+        </div>
+
+        <div class="form-group">
+            <input formControlName = "userName" type="text" placeholder="Username" data-toggle="tooltip" data-placement="right" title="Enter username" >
+            <div class="error-message" *ngIf = "(UserName.touched) && (UserName.invalid)" 
+            style="margin-top: 5px;">
+              <span *ngIf="UserName.errors.required">User Name is Required</span>
+                <span *ngIf = "UserName.errors.pattern"> 
+                    User name must have 8 characters, one uppercase, one special character(!@#$%^&+=_) and one numeric value
+                </span>                   
+            </div>
+    
+        </div>
+
+        <div class="form-group">
+            <input formControlName = "password" type="password" placeholder="Password"  data-toggle="tooltip" data-placement="right" title="Enter password" >
+            <div class="error-message" *ngIf = "(Password.touched) && (Password.invalid)" 
+            style="margin-top: 5px;">
+              <span *ngIf="Password.errors.required">Password is Required</span>
+                <span *ngIf = "Password.errors.pattern"> 
+                    Password must have 8 characters, one uppercase, one special character(!@#$%^&+=_) and one numeric value
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <input formControlName = "role" type="text" placeholder="Role" data-toggle="tooltip" data-placement="right" title="Enter role" >
+            
+        </div>
+        <button class="submit" type="submit">ADD</button>
+        
+        </form>
+        <button class="submit" onclick = "location.href = 'view-employee' " type = "submit">VIEW</button>
+        </div>
+        
+    </div>  
+</body>
+
+</html>
+
+
+

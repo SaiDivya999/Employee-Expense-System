@@ -1,0 +1,38 @@
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<br>
+<br>
+<div>
+    <h1 style="text-align: center">Expense Claim List</h1><br>          
+</div>
+    <div class ="container">
+        
+        <table  class="table  table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions"
+        [dtTrigger]="dtTrigger" >
+        
+        <thead class="thead-dark">
+                <tr>
+                    <th>Expense Code Id</th>
+                    <th>Expense Amount</th>
+                    <th>Start Date</th>  
+                    <th>End Date</th> 
+                    <<th>Employee Id</th>
+                    <th>Project Code</th>  
+                    <th>Expense Code</th> 
+                    <th>Actions</th>            
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor="let e of expenses">
+                    <td>{{e.expenseCodeId}}</td>
+                    <td>{{e.expenseAmount}}</td>
+                    <td>{{e.startDate}}</td> 
+                    <td>{{e.endDate}}</td>
+                    <td>{{e.empId}}</td>
+                    <td>{{e.projectCode}}</td> 
+                    <td>{{e.expenseCode}}</td>
+                    <td><button (click)="deleteExpenseClaim(e.expenseCodeId)" class="btn"><i class="fa fa-trash"></i>Delete</button> </td>                              
+                  </tr> 
+            </tbody>
+        </table>
+    </div>
+ 

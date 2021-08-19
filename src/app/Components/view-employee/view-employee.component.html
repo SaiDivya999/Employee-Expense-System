@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<br>
+<br>
+<div>
+    <h1 style="text-align: center">Employee List</h1><br>          
+</div>
+    <div class ="container">
+        
+        <table  class="table  table-striped table-bordered table-sm row-border hover" datatable [dtOptions]="dtOptions"
+        [dtTrigger]="dtTrigger" >
+        
+        <thead class="thead-dark">
+                <tr>
+                    <th>Employee Id</th>
+                    <th>Employee Name</th>
+                    <th>Employee PAN</th> 
+                    <th>Employee Designation</th> 
+                    <th>Employee Domain</th>
+                    <th>Employee DOJ</th>
+                    <th>Employee DOB</th>
+                    <th>Employee Salary</th>
+                    <th>Employee EmailId</th>
+                    <th>UserName</th> 
+                    <th>Password</th>
+                    <th>Role</th> 
+                    <!--<th>Status</th>-->        
+                </tr>
+            </thead>
+            <tbody>
+                 <tr *ngFor="let e of employees">
+                    <td>{{e.empId}}</td>
+                    <td>{{e.empName}}</td>
+                    <td>{{e.empPAN}}</td>
+                    <td>{{e.empDesignation}}</td>
+                    <td>{{e.empDomain}}</td>
+                    <td>{{e.empDOJ}}</td>
+                    <td>{{e.empDOB}}</td>
+                    <td>{{e.empSalary}}</td>
+                    <td>{{e.empEmailId}}</td>
+                    <td>{{e.userName}}</td>
+                    <td>{{e.password}}</td>
+                    <td>{{e.role}}</td>
+                   <!-- <td><button (click)="getEmployeeById(employee.empId)" class="btn" >View</button> </td> -->
+                   <!--<td><a class = "btn"  (click) = "getEmployeeById(employee.empId)" [routerLink] = "['/view-emp-by-id/'+employee.empId]">View</a></td> -->                            
+                  </tr> 
+            </tbody>
+        </table>
+    </div>
+ 
+
